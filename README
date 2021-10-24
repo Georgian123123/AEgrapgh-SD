@@ -1,0 +1,41 @@
+
+------------------------------------------------------------------------
+Possible Double Cuts
+------------------------------------------------------------------------
+Ideea de care m-am folosit este urmatoarea: pentru ca sa existe o posibi
+litate de double cut, nodul urmator trebuie sa aiba numarul de atomi 0 si
+numarul de subgrafuri 1, deoarece double cut-ul nu este posibil in cazul 
+unei birfucatii de subgrafuri/intalnirea unui atom.Apoi, am apelat recur-
+siv pentru a parcurge tot graful.
+-------------------------------------------------------------------------
+Duble Cuts
+-------------------------------------------------------------------------
+Ideea rezolvarii problemei este parcurgearea grafului cu ajutorul unui
+pointer pana in nodul de deasupra celor doua negari. Cu un alt pointer
+ma deplasez pe cea de-a doua negare si lipesc atomii si subgrafurile
+de nodul de deasupra locului in care fac double cut. In final, sterg
+subgraful pe care fac double cut.
+-------------------------------------------------------------------------
+Erase/Deitarations
+-------------------------------------------------------------------------
+Parcurg graful pana deasupra subgrafului pe care trebuie sa il sterg doar
+daca elementul de pe prima pozitie a vectorului where indica pozitia unui
+subgraf, nu a unui atom. In continuare, verific daca ultimul element din
+where indica catre un subgraf sau catre un atom. Astfel, fac stergerea
+din vectorul de subgrafuri sau de atomi ale grafului in care sunt
+pozitionat.
+-------------------------------------------------------------------------
+Possible deiterations
+-------------------------------------------------------------------------
+Caut in toate subgrafurile unui graf unul dintre subgrafurile lui si
+returnez path-ul catre acesta, concatenand apoi cu path-ul parcurs pana
+in acel punct, iar apoi adaug tot la finalul matricei. Analog, pentru
+cautarea unui atom. La final, ordonez path-urile din matrice si sterg
+duplicatele.
+------------------------------------------------------------------------
+Possible erasures
+------------------------------------------------------------------------
+Ideea este similara celei de la P.D.C, si anume, putem sterge de pe un
+nivel impar, orice, fie subgraf, fie atom.Apoi am apelat recursiv pentru
+toate subgrafurile
+------------------------------------------------------------------------
